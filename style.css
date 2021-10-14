@@ -15,13 +15,35 @@ header {
 }
 
 main {
-  display: grid;
-  /* grid-template-columns: repeat(6, 2fr); */
-  /* grid-template-rows: 2fr 2fr 2fr 2fr; */
-  grid-column: 2 / span 5;
-  /* grid-row: 2 / span 3; */
+  width: 75vw;
+  margin: 0 auto;
+  /* grid-column: 2 / span 5; */
 }
 
 img {
   height: 200px;
+}
+
+#dropdown {
+  margin-left: 90px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#display-info {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+form {
+  margin-left: 65px;
+  margin-top: 65px;
+}
+
+#submitbtn {
+  width: 200px;
+}
+
+#userInput {
+  width: 200px;
 }
