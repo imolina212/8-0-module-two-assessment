@@ -1,9 +1,9 @@
 fetch("https://ghibliapi.herokuapp.com/films")
   .then((res) => res.json())
   .then((films) => {
-    console.log(films);
+    // console.log(films);
 
-    const dropDown = document.querySelector("#dropdown");
+    let dropDown = document.querySelector("#dropdown");
 
     for (let film of films) {
       const option = document.createElement("option");
@@ -12,15 +12,16 @@ fetch("https://ghibliapi.herokuapp.com/films")
       dropDown.append(option);
     }
 
+    let dropDown2 = document.querySelector("#dropdown");
     let displayInfo = document.querySelector("#display-info");
-    //add li's
-    dropDown.addEventListener("change", () => {
+
+    dropDown2.addEventListener("change", () => {
       for (let film of films) {
-        let releasedDate = film.released_date;
+        let releasedDate = film.release_date;
         let filmDescription = film.description;
 
-        if (dropDown.value === film.title) {
-          console.log(film.title);
+        if (dropDown2.value === film.title) {
+          //   console.log(film.title);
           displayInfo.innerHTML = `<h3>${film.title}</h3>
             <p id="releasedDate">${releasedDate}</p>
             <p id="film-description">${filmDescription}</p>`;
@@ -28,14 +29,22 @@ fetch("https://ghibliapi.herokuapp.com/films")
       }
 
       //Review section
-      let ul = document.querySelector("#reviewlist");
+      let reviewList = document.querySelector("#reviewList");
 
-      document.querySelector("form").addEventListener("submit", (event) => {
+      let form = document.querySelector("#form");
+
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${filmheader.value}</strong>`;
-        //   li.textContent = `${event.target.input.value}`;
-        ul.append(li);
+        let userInput = document.querySelector("#userInput");
+        let filmHeader = document.querySelector("#display-info h3");
+
+        let li = document.createElement("li");
+        li.innerHTML = `<strong>${filmHeader.textContent}: </strong>${userInput.value}`;
+        reviewList.append(li);
+
+        if (li !== undefined) {
+          userInput.value = "";
+        }
       });
     });
   })
