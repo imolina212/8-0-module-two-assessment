@@ -27,7 +27,7 @@ fetch("https://ghibliapi.herokuapp.com/films")
             <p id="film-description">${filmDescription}</p>`;
         }
       }
-
+ });
       //Review section
       let reviewList = document.querySelector("#reviewList");
 
@@ -46,7 +46,7 @@ fetch("https://ghibliapi.herokuapp.com/films")
           userInput.value = "";
         }
       });
-    });
+   
   })
   .catch((err) => {
     console.log(err);
