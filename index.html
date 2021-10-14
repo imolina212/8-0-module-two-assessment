@@ -12,18 +12,17 @@
     <header>
       <img src="./images/ghibli-logo.png" />
       <h1>Ghibli Review App</h1>
-
-      <!-- <div>
-      </div> -->
     </header>
-    <main>
-      <select id="dropdown">
-        <option value="default">Castle in the Sky</option>
-      </select>
-      <div>
-        Your Review <input type="text" />
-        <input type="submit" id="submitbtn" value="Submit Review" />
-      </div>
+    <main id="main">
+        <select id="dropdown"></select>
+        <section id="display-info"></section>
+        <form>
+            <label>Your Review</label>
+            <input type="text" name="input" />
+            <input type="submit" id="submitbtn" value="Submit Review" />
+            <ul id=reviewlist"></ul>
+        </form>
+      
     </main>
   </body>
 </html>

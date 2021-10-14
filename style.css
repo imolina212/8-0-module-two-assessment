@@ -1,9 +1,9 @@
 body {
   display: grid;
   background-color: lavender;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin-left: 15%;
+  grid-template-columns: repeat(6, 2fr);
+  grid-template-rows: 2fr 2fr 2fr 2fr;
+  /* margin-left: 15%; */
   /* margin-right: 15%; */
 }
 
@@ -11,8 +11,19 @@ header {
   width: 75%;
   height: 25%;
   background-color: skyblue;
+  grid-column: 2 / span 6;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main {
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 3;
 }
 
 img {
   height: 100%;
+}
+form {
+  grid-column: 2 / span 3;
+  padding: 10%;
 }
